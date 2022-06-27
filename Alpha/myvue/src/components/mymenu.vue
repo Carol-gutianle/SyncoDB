@@ -19,7 +19,7 @@
         </el-menu-item-group>
 
         <el-menu-item-group>
-          <el-menu-item index="teacher_caozuo">老师操作(之后改</el-menu-item>
+          <el-menu-item index="teacher_caozuo">操作</el-menu-item>
         </el-menu-item-group>
 
 

@@ -26,8 +26,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
 urlpatterns = {
     path('admin/', admin.site.urls),
     # path('api/return_datas/', views.show_datas),
-    path('api/page1/', views.page1_check),
-    path('api/page2/', views.page2_getsql),
+    path('api/connect/', views.page1_check),
+    path('api/getsql/', views.page2_getsql),
     re_path(r'media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
 
 }

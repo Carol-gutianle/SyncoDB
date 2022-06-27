@@ -25,12 +25,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
 urlpatterns = {
     path('admin/', admin.site.urls),
-    path('api/return_datas/', views.show_datas),
-    path('api/cdata_post/', views.cdata_post),
-    path('api/get_datas/', views.return_datas),
+    # path('api/return_datas/', views.show_datas),
+    path('api/page1/', views.page1_check),
+    path('api/page2/', views.page2_getsql),
     re_path(r'media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
-    # url(r'^webtest/', views.PythonWebDemo.webtest),#添加api路由
-    # path(r'',TemplateView.as_view(template_name="index.html"))
+
 }
 
 # #设置静态文件路径

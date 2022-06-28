@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.23.0",
     "element-ui": "^2.15.6",
+    "live2d-widget": "^3.1.4",
     "vue": "^2.5.2",
     "vue-router": "^3.5.2",
     "webpack-dev-server": "^2.9.6"

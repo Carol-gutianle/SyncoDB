@@ -15,11 +15,13 @@
 
 
         <el-menu-item-group>
-          <el-menu-item index="teacher_denglu">数据库连接</el-menu-item>
+          <el-menu-item index="denglu">数据库连接</el-menu-item>
         </el-menu-item-group>
 
+<!--        这里是左边的目录-->
+
         <el-menu-item-group>
-          <el-menu-item index="teacher_caozuo">操作</el-menu-item>
+          <el-menu-item index="caozuo">操作</el-menu-item>
         </el-menu-item-group>
 
 

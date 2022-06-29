@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="1b945e18-3fa5-4cad-841c-58d2ad71ad8a" name="chemistry">
+        <fileTransfer accessType="SFTP" host="122.9.149.23" port="22" sshConfigId="c0d09483-4bc5-4c8d-9a7e-b9928442c555" sshConfig="122.9.149.23">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

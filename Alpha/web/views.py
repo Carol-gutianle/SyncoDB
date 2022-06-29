@@ -6,6 +6,7 @@ import json
 import os
 import numpy as np
 from django.views.decorators.csrf import csrf_exempt
+from mapper import controlSQL
 from pylab import *
 # mpl.rcParams['font.sans-serif'] = ['SimHei']
 # titles=["图一反应条件：448K 1.0MPa","图二反应条件：453K 1.0MPa","图三反应条件：458K 1.0MPa","图四反应条件：463K 1.0MPa","图五反应条件：443K 1.0MPa 酯浓度0.002mol/m3","图六反应条件：443K 1.0MPa 酯浓度0.001mol/m3","图七反应条件：443K 1.0MPa 酯浓度0.004mol/m3"]
@@ -35,7 +36,7 @@ def page1_check(request):
     port_ = request.GET.get('port','')
 
     if (username==name_)==False:
-        rescode=201  #用户名错误
+        rescode = 201  # 用户名错误
     elif (password==pass_)==False:
         rescode = 202  # 密码错误
     elif (ip==ip_)==False:
@@ -55,10 +56,12 @@ def page2_getsql(request):
     sql=request.GET.get('request','')
     data = {}
     res=''
-    #调用c函数，将c函数返回的结果保存在res当中
+    # 调用c函数，将c函数返回的结果保存在res当中
+
+    res, resCode = controlSQL("test.db",sql)  # 0 成功  失败码没尝试目前
+
     data['res'] = res
     HttpResponse(sample, content_type="application/json")  # 返回给前端
-
 
 
 

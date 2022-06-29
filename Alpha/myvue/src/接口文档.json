@@ -1,0 +1,249 @@
+{
+	"info": {
+		"_postman_id": "4f7bf8c6-9317-4e00-8ff1-965b80b75aab",
+		"name": "CourseDesignDbDesign",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "学生登陆",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/stuLogin?sno=201909060110&spwd=201909060110",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"stuLogin"
+					],
+					"query": [
+						{
+							"key": "sno",
+							"value": "201909060110"
+						},
+						{
+							"key": "spwd",
+							"value": "201909060110"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "教师登录",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/teaLogin?tno=admin&tpwd=111111",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"teaLogin"
+					],
+					"query": [
+						{
+							"key": "tno",
+							"value": "admin"
+						},
+						{
+							"key": "tpwd",
+							"value": "111111"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "学生修改密码",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/stuUpdatePwd?sno=201909060110&nspwd=123456",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"stuUpdatePwd"
+					],
+					"query": [
+						{
+							"key": "sno",
+							"value": "201909060110"
+						},
+						{
+							"key": "nspwd",
+							"value": "123456"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "选题情况查询",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/seleQueCond?sno=201909060110",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"seleQueCond"
+					],
+					"query": [
+						{
+							"key": "sno",
+							"value": "201909060110"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "成绩情况查询",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "教师修改进度",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/setProgress?qno=1&progress=90",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"setProgress"
+					],
+					"query": [
+						{
+							"key": "qno",
+							"value": "1"
+						},
+						{
+							"key": "progress",
+							"value": "90"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "教师修改课程成绩",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/setGrade?qno=1&grade=99",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"setGrade"
+					],
+					"query": [
+						{
+							"key": "qno",
+							"value": "1"
+						},
+						{
+							"key": "grade",
+							"value": "99"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "教师查看选题情况",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/seleQue",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"seleQue"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "查看课程设计题目",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/seleQueName",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"seleQueName"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

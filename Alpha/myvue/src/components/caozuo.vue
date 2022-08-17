@@ -24,6 +24,13 @@
           <div style="margin: 50px;"></div>
         </el-form>
 
+        <div id="app">
+          <select v-model="selected">
+            <el-option v-for="item in items" :key="item.id" :label="item.fileName" :value="item.id"></el-option>
+          </select>
+          <span>已选：{{selected}}</span>
+        </div>
+
         <div style="text-align: center">
           <el-button type="primary" icon="el-icon-edit" @click="gocaozuo2">运行</el-button>
         </div>
@@ -59,6 +66,12 @@
 import request from "../util/request";
 
 export default {
+  created(){
+    request.get('/api/getDatabase').then(res=> {
+      console.log(res.data.data)
+      this.storyData.items = res.data.data
+    })
+  },
   name: "teacher_caozuo",
   data() {
     return {
@@ -67,6 +80,8 @@ export default {
         tpass:'',
       },
       search: '',
+      items: [],
+      selected:''
     };
   },
 
@@ -74,7 +89,6 @@ export default {
     save(form) {
       this.$refs[form].validate((valid) => {
         if (valid) {
-
           request.post("/api/person/addPerson", this.form).then(res => {
 
             console.log(res.data); //打印出来

@@ -4,8 +4,6 @@
     </div>
     <div style="text-align: center;width: 100%; padding-left: 400px;margin: auto">
 
-
-
       <el-card style="width: 40%; margin: 10px">
 
         <i class="el-icon-lock"></i>
@@ -72,7 +70,7 @@ export default {
       this.storyData.items = res.data.data
     })
   },
-  name: "teacher_caozuo",
+
   data() {
     return {
       form:{

@@ -9,23 +9,27 @@
           <i class="el-icon-user-solid"></i>
           <p>数据库登录</p>
 
-          <el-form-item label="用户名" :label-width="formLabelWidth" >
-            <el-input style="width: 200px"
-                      placeholder="请输入姓名"
+          <el-form-item label="用户名" :label-width="formLabelWidth" prop="username">
+            <el-input style="width: 380px"
+                      placeholder="请输入用户名"
                       v-model="form.username"
                       clearable>
             </el-input>
           </el-form-item>
 
-          <el-form-item label="密码" :label-width="formLabelWidth" >
-            <el-input style="width: 200px"
+          <!--之前input的style是 "width: 200px"，显示会歪，不知道应该怎么处理，经过调试改成380px可以解决-->
+
+          <el-form-item label="密码" :label-width="formLabelWidth" prop="pwd">
+            <el-input style="width: 380px"
                       placeholder="请输入密码"
                       v-model="form.pwd"
-                      clearable>
+                      clearable
+                      show-password>
             </el-input>
           </el-form-item>
 
           <div style="margin: 50px;"></div>
+          <!--这个是底部空多少位置-->
         </el-form>
 
         <div style="text-align: center">
@@ -43,24 +47,23 @@
 import request from "../util/request";
 import {L2Dwidget} from 'live2d-widget';
 
-export default {
-  name: "teacher_denglu",
-  data() {
-    //检查姓名
-    var checktname = (rule, value, callback) => {
-      if (!value) {
-        callback(new Error('请输入名字'));
-      }
-      else {callback();}
-    };
-    //检查姓名
-    var checktpass = (rule, value, callback) => {
-      if (!value) {
-        callback(new Error('请输入密码'));
-      }
-      else {callback();}
-    };
+//检查用户名
+var checktname = (rule, value, callback) => {
+  if (!value) {
+    callback(new Error('请输入用户名'));
+  }
+  else {callback();}
+};
+//检查密码
+var checktpass = (rule, value, callback) => {
+  if (!value) {
+    callback(new Error('请输入密码'));
+  }
+  else {callback();}
+};
 
+export default {
+  data() {
     return {
       form:{
         username: '',
@@ -71,7 +74,8 @@ export default {
       rules: {
         username:[ { validator: checktname, trigger: 'blur'  }, ],
         pwd: [ { validator: checktpass, trigger: 'blur' } ]
-      }
+      },
+
     };
   },
 
@@ -108,6 +112,7 @@ export default {
       });
     },
   },
+
   created() {
       L2Dwidget.init({
         model: {

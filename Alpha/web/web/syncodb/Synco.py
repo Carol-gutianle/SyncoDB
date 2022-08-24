@@ -6,7 +6,11 @@ from datetime import datetime, date, timedelta
 class Synco:
     #设置端口
     def __init__(self):
-        self.program = 'SqlVS.exe'
+        self.program = '.\SqlVS.exe'
+
+    #输出当前路径
+    def currPath(self):
+        return os.getcwd()
 
     #连接数据库
     def conn(self,username,pwd):
@@ -34,8 +38,22 @@ class Synco:
         return dbList
 
     #执行SQL语句
-    def SQLExecute(self,sqlquery):
-        #解析SQL语句
-        return 1
-
-    #输出执行时间
+    def SQLExecute(self,dbname,optype,sqlquery):
+        #非查询操作
+        if optype == 0:
+            operate_query = './web/syncodb/SqlVS.exe' + ' ' + dbname + ' "' + sqlquery + '"'
+            operate_query = operate_query.replace('\n','')
+            result = os.system(operate_query)
+            if(result == 0):
+                return "success"
+            else:
+                return "failed" 
+        #查询操作
+        else:
+            operate_query = '.\SqlVS.exe' + ' ' + dbname + ' "' + sqlquery + '"'
+            operate_query = operate_query.replace('\n','')
+            result = os.popen(operate_query).readlines()
+            for i in range(len(result)):
+                result[i] = result[i].split('|')
+            result = pd.DataFrame(result)
+            return result

@@ -28,7 +28,8 @@ urlpatterns = {
     # path('api/return_datas/', views.show_datas),
     path('checkConn/', views.page1_check),
     path('getDatabase', views.getDatabase),
-    path('api/getsql/', views.page2_getsql),
+    path('sqlExecute/', views.sqlExecute),
+    path('getCurrPath', views.getCurrPath),
     re_path(r'media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT}),
 
 }

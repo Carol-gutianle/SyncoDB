@@ -17,6 +17,7 @@ class Synco:
         username = "\'" + username + "\'"
         pwd = "\'" + pwd + "\'"
         checkSQL = "select * from user where username = " + username + "and pwd = " + pwd
+        os.chdir('web/syncodb')
         result = os.popen('.\SqlVS.exe user.db \"' + checkSQL + '"').readline()
         if(len(result) == 0):
             return 0
@@ -52,6 +53,7 @@ class Synco:
         else:
             operate_query = '.\SqlVS.exe' + ' ' + dbname + ' "' + sqlquery + '"'
             operate_query = operate_query.replace('\n','')
+            os.chdir('web/syncodb')
             result = os.popen(operate_query).readlines()
             for i in range(len(result)):
                 result[i] = result[i].split('|')

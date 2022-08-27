@@ -63,12 +63,19 @@ def getDatabase(request):
 def sqlExecute(request):
     request.encoding = 'utf-8'
     '''取出操作数据库 sql语句内容'''
-    dbname = request.POST.get('dbname','')
-    sqlQuery = request.POST.get('sqlQuery','')
+    print("TEST:4")
+    print(request.GET)
+    # @bianying: 需要确定POST GET请求
+    # dbname = request.POST.get('dbname','')
+    # sqlQuery = request.POST.get('sqlQuery','')
+    dbname = request.GET.get('dbname', '')
+    sqlQuery = request.GET.get('sqlQuery', '')
+
     db = Synco()
     data = {}
     '''判断操作类型'''
-    if sqlQuery[0:6] == "select":
+    # @bianying: 修改为SELECT: Sqlite大小写敏感, 固定词必须全大写
+    if sqlQuery[0:6] == "SELECT":
         res = db.SQLExecute(dbname,1,sqlQuery)
         data['data'] = res
         data['status'] = "success"

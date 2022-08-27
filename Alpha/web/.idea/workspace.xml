@@ -19,7 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d932d4e-5a72-4cfd-b8e3-7140c09f3c86" name="Default Changelist" comment="" />
+    <list default="true" id="8d932d4e-5a72-4cfd-b8e3-7140c09f3c86" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/matlabweb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/matlabweb.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/syncodb/Synco.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/syncodb/Synco.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,6 +56,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -68,14 +77,14 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="E:\anaconda\python.exe" />
+      <option name="SDK_HOME" value="D:\Users\lenove\anaconda3.0\envs\web\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
-      <option name="PARAMETERS" value="" />
+      <option name="PARAMETERS" value="runserver" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -116,6 +125,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -161,71 +171,9 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="111" y="0" key="#Deployment" timestamp="1653841626869">
-      <screen x="0" y="0" width="1280" height="672" />
-    </state>
-    <state x="111" y="0" key="#Deployment/0.0.1280.672@0.0.1280.672" timestamp="1653841626869" />
-    <state x="294" y="12" key="#Options" timestamp="1653841651449">
-      <screen x="0" y="0" width="1280" height="672" />
-    </state>
-    <state x="294" y="12" key="#Options/0.0.1280.672@0.0.1280.672" timestamp="1653841651449" />
-    <state x="130" y="0" key="#SSH_Configurations" timestamp="1653841543261">
-      <screen x="0" y="0" width="1280" height="672" />
-    </state>
-    <state x="130" y="0" key="#SSH_Configurations/0.0.1280.672@0.0.1280.672" timestamp="1653841543261" />
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1660650541338">
-      <screen x="0" y="0" width="1280" height="672" />
-    </state>
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.672/1920.0.1920.1032@0.0.1280.672" timestamp="1660650541338" />
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.672@0.0.1280.672" timestamp="1652753536747" />
-    <state x="381" y="137" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1660649497193">
-      <screen x="0" y="0" width="1280" height="672" />
-    </state>
-    <state x="381" y="137" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.672/1920.0.1920.1032@0.0.1280.672" timestamp="1660649497193" />
-    <state x="340" y="0" key="#manage" timestamp="1652753281513">
-      <screen x="0" y="0" width="1280" height="672" />
-    </state>
-    <state x="340" y="0" key="#manage/0.0.1280.672@0.0.1280.672" timestamp="1652753281513" />
-    <state x="73" y="175" width="1095" height="487" key="DirDiffDialog" timestamp="1653841978744">
-      <screen x="0" y="0" width="1280" height="672" />
-    </state>
-    <state x="73" y="175" width="1095" height="487" key="DirDiffDialog/0.0.1280.672@0.0.1280.672" timestamp="1653841978744" />
-    <state width="1237" height="201" key="GridCell.Tab.0.bottom" timestamp="1660650760238">
-      <screen x="0" y="0" width="1280" height="672" />
-    </state>
-    <state width="1237" height="201" key="GridCell.Tab.0.bottom/0.0.1280.672/1920.0.1920.1032@0.0.1280.672" timestamp="1660650760238" />
-    <state width="1237" height="160" key="GridCell.Tab.0.bottom/0.0.1280.672@0.0.1280.672" timestamp="1653873538277" />
-    <state width="1237" height="201" key="GridCell.Tab.0.center" timestamp="1660650760238">
-      <screen x="0" y="0" width="1280" height="672" />
-    </state>
-    <state width="1237" height="201" key="GridCell.Tab.0.center/0.0.1280.672/1920.0.1920.1032@0.0.1280.672" timestamp="1660650760238" />
-    <state width="1237" height="160" key="GridCell.Tab.0.center/0.0.1280.672@0.0.1280.672" timestamp="1653873538277" />
-    <state width="1237" height="201" key="GridCell.Tab.0.left" timestamp="1660650760238">
-      <screen x="0" y="0" width="1280" height="672" />
-    </state>
-    <state width="1237" height="201" key="GridCell.Tab.0.left/0.0.1280.672/1920.0.1920.1032@0.0.1280.672" timestamp="1660650760238" />
-    <state width="1237" height="160" key="GridCell.Tab.0.left/0.0.1280.672@0.0.1280.672" timestamp="1653873538277" />
-    <state width="1237" height="201" key="GridCell.Tab.0.right" timestamp="1660650760238">
-      <screen x="0" y="0" width="1280" height="672" />
-    </state>
-    <state width="1237" height="201" key="GridCell.Tab.0.right/0.0.1280.672/1920.0.1920.1032@0.0.1280.672" timestamp="1660650760238" />
-    <state width="1237" height="160" key="GridCell.Tab.0.right/0.0.1280.672@0.0.1280.672" timestamp="1653873538277" />
-    <state x="142" y="0" key="SettingsEditor" timestamp="1652753659432">
-      <screen x="0" y="0" width="1280" height="672" />
-    </state>
-    <state x="142" y="0" key="SettingsEditor/0.0.1280.672@0.0.1280.672" timestamp="1652753659432" />
-    <state x="398" y="93" key="ftp.server.browser" timestamp="1653841610683">
-      <screen x="0" y="0" width="1280" height="672" />
-    </state>
-    <state x="398" y="93" key="ftp.server.browser/0.0.1280.672@0.0.1280.672" timestamp="1653841610683" />
-    <state x="509" y="227" key="publish.login" timestamp="1653841331898">
-      <screen x="0" y="0" width="1280" height="672" />
-    </state>
-    <state x="509" y="227" key="publish.login/0.0.1280.672@0.0.1280.672" timestamp="1653841331898" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/matlabweb$manage.coverage" NAME="manage Coverage Results" MODIFIED="1653842066922" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/web$manage.coverage" NAME="manage Coverage Results" MODIFIED="1660650531099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
   </component>
 </project>

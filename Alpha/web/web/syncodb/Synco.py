@@ -45,21 +45,30 @@ class Synco:
             # 上一版错误路径：
             # operate_query = './web/syncodb/SqlVS.exe' + ' ' + dbname + ' "' + sqlquery + '"'
 
+            # @bianying Qes: 为什么exe和当前文件是同一个目录下，但是直接调用不成功
+            # operate_query = 'SqlVS.exe' + ' ' + dbname + ' "' + sqlquery + '"'
+
             # @bianying 修改之后的正确路径(\\) + 参数格式(必须要有"",否则非内置命令无法识别，会报错：)
             operate_query = 'web\\syncodb\\SqlVS.exe' + ' ' + dbname + ' "' + sqlquery + '"'
 
-            print('TEST:1')
-            print(operate_query)
+            # 测试埋点1：
+            # print('TEST :1 (解析请求)')
+            # print(operate_query)
             operate_query = operate_query.replace('\n','')
-            print('TEST:2')
-            print(operate_query)
+
+            # print('TEST:2 (请求换行 -> 空格)')
+            # print(operate_query)
             result = os.system(operate_query)
-            print('Result:')
-            print(result)
+
+            # 埋点cmd的返回结果：
+            # print('Result:')
+            # print(result)
+
             if(result == 0):
                 return "success"
             else:
-                return "failed" 
+                return "failed"
+
         #查询操作
         else:
             # 测试之后还是有问题，报错LOG在 [后端测试v1]
@@ -68,10 +77,13 @@ class Synco:
             # @bianying 改用如下方法可以正常使用
             operate_query = 'web\\syncodb\\SqlVS.exe' + ' ' + dbname + ' "' + sqlquery + '"'
             operate_query = operate_query.replace('\n','')
+
             # os.chdir('web/syncodb')
             result = os.popen(operate_query).readlines()
-            print("select result:")
-            print(result)
+
+            # 埋点cmd的返回结果：
+            # print("select result:")
+            # print(result)
             for i in range(len(result)):
                 result[i] = result[i].split('|')
 

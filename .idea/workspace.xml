@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3215d7cf-6f53-4439-bb6f-e22be027f9af" name="默认变更列表" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Alpha/myvue/src/components/caozuo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Alpha/myvue/src/components/caozuo.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Alpha/myvue/src/components/denglu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Alpha/myvue/src/components/denglu.vue" afterDir="false" />
     </list>
@@ -23,7 +24,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../顾天乐_林星彤_张华崑_王启航" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -50,6 +51,7 @@
       <workItem from="1661158851899" duration="2712000" />
       <workItem from="1661216819934" duration="3668000" />
       <workItem from="1661228404857" duration="2148000" />
+      <workItem from="1661741886861" duration="3710000" />
     </task>
     <servers />
   </component>

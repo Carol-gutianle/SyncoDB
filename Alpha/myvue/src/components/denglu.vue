@@ -80,13 +80,6 @@ export default {
   },
 
   methods:{
-
-    gocaozuo(){
-      this.$router.push({
-        path:'../caozuo'
-      })
-    },
-
     save(form) {
       this.$refs[form].validate((valid) => {
         if (valid) {

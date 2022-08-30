@@ -8,6 +8,19 @@
 
 > conda install django
 
+前端启动
+
+> 启动前先安装依赖库：
+>
+> npm i element-ui -S
+>
+> npm install -S live2d-widget
+>
+> npm install
+>
+> 启动：
+> npm run dev
+
 后端启动
 
 > python manage.py runserver

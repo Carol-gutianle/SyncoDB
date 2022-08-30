@@ -13,17 +13,18 @@ from pylab import *
 
 @csrf_exempt
 def page1_check(request):
-    request.encoding = 'utf-8'
     data = {}
     '''取出用户名，密码'''
-    name_ = request.POST.get('username','')
-    pass_ = request.POST.get('pwd','')
+    data = json.loads(request.body.decode('utf-8'))
+    name_ = data.get('username')
+    pass_ = data.get('pwd')
+
     #判断是否成功连接
     db = Synco()
     if(db.conn(name_,pass_)):
-        rescode = 201
+        rescode = 200#成功
     else :
-        rescode = 200
+        rescode = 201
 
     data['status']=rescode
     sample = json.dumps(data)  # json.dumps()把一个Python对象编，码转换成Json字符串。
@@ -55,33 +56,36 @@ def getDatabase(request):
     data = {}
     db = Synco()
     res = db.getDatabase()
-    data['data'] = res
+    data['datas'] = res
     sample = json.dumps(data)
     return HttpResponse(sample, content_type="application/json")
 
 @csrf_exempt
 def sqlExecute(request):
-    request.encoding = 'utf-8'
     '''取出操作数据库 sql语句内容'''
-    print("TEST:4")
-    print(request.GET)
-    # @bianying: 需要确定POST GET请求
-    # dbname = request.POST.get('dbname','')
-    # sqlQuery = request.POST.get('sqlQuery','')
-    dbname = request.GET.get('dbname', '')
-    sqlQuery = request.GET.get('sqlQuery', '')
-
+    ret = json.loads(request.body.decode('utf-8'))
+    dbname = ret.get('dbname')
+    sqlQuery = ret.get('sqlQuery')
     db = Synco()
     data = {}
+    List = []
+    Obj = {}
+    Obj['操作'] = sqlQuery
+    List.append(Obj)
+    data['res1'] = List
+
+    # dbname="user"
+    # sqlQuery="SELECT * FROM user;"
     '''判断操作类型'''
     # @bianying: 修改为SELECT: Sqlite大小写敏感, 固定词必须全大写
     if sqlQuery[0:6] == "SELECT":
         res = db.SQLExecute(dbname,1,sqlQuery)
-        data['data'] = res
-        data['status'] = "success"
+        data['res2'] = res
+        # data['status'] = "success"
     else:
         status = db.SQLExecute(dbname,0,sqlQuery)
-        data['status'] = status
+        data['res2']=status
+
     sample = json.dumps(data)  # json.dumps()把一个Python对象编，码转换成Json字符串。
     return HttpResponse(sample, content_type="application/json")  # 返回给前端
 

@@ -12,13 +12,11 @@ class Synco:
     def currPath(self):
         return os.getcwd()
 
-    #连接数据库
     def conn(self,username,pwd):
         username = "\'" + username + "\'"
         pwd = "\'" + pwd + "\'"
-        checkSQL = "select * from user where username = " + username + "and pwd = " + pwd
-        os.chdir('web/syncodb')
-        result = os.popen('.\SqlVS.exe user.db \"' + checkSQL + '"').readline()
+        checkSQL = "select * from u1 where username = " + username + "and pwd = " + pwd
+        result = os.popen('web\\syncodb\\SqlVS.exe user.db \"' + checkSQL + '"').readlines()
         if(len(result) == 0):
             return 0
         else:
@@ -28,7 +26,7 @@ class Synco:
     def getDatabase(self):
         fileList = os.listdir('./web/syncodb/')
         dbList = []
-        idx = 0
+        idx = 1
         for file in fileList:
             if ('.db' in file):
                 fileObj = {}
@@ -42,32 +40,22 @@ class Synco:
     def SQLExecute(self,dbname,optype,sqlquery):
         #非查询操作
         if optype == 0:
-            # 上一版错误路径：
-            # operate_query = './web/syncodb/SqlVS.exe' + ' ' + dbname + ' "' + sqlquery + '"'
-
-            # @bianying Qes: 为什么exe和当前文件是同一个目录下，但是直接调用不成功
-            # operate_query = 'SqlVS.exe' + ' ' + dbname + ' "' + sqlquery + '"'
-
             # @bianying 修改之后的正确路径(\\) + 参数格式(必须要有"",否则非内置命令无法识别，会报错：)
             operate_query = 'web\\syncodb\\SqlVS.exe' + ' ' + dbname + ' "' + sqlquery + '"'
-
-            # 测试埋点1：
-            # print('TEST :1 (解析请求)')
-            # print(operate_query)
             operate_query = operate_query.replace('\n','')
-
-            # print('TEST:2 (请求换行 -> 空格)')
-            # print(operate_query)
-            result = os.system(operate_query)
-
-            # 埋点cmd的返回结果：
-            # print('Result:')
-            # print(result)
-
+            result = os.system(operate_query+' 2>out.txt')
+            f = open('out.txt')
+            context = f.read()
             if(result == 0):
-                return "success"
+                res= "success"
             else:
-                return "failed"
+                res= context
+
+            List1 = []
+            Obj1 = {}
+            Obj1['运行结果'] = res
+            List1.append(Obj1)
+            return List1
 
         #查询操作
         else:
@@ -79,15 +67,60 @@ class Synco:
             operate_query = operate_query.replace('\n','')
 
             # os.chdir('web/syncodb')
-            result = os.popen(operate_query).readlines()
+            result = os.system(operate_query + ' 2>out.txt')
 
-            # 埋点cmd的返回结果：
-            # print("select result:")
-            # print(result)
-            for i in range(len(result)):
-                result[i] = result[i].split('|')
+            List1 = []
+
+            if (result == 0):
+                res1 = os.popen(operate_query).readlines()#['22|12134\n', '22|12134\n', '22|12134\n', '22|12134\n']
+                operate_query = 'web\\syncodb\\SqlVS.exe user \"PRAGMA table_info([user]);\"'
+                operate_query = operate_query.replace('\n', '')
+                res2=os.popen(operate_query).readlines()#获取表列名称和属性
+                if len(res1)==0:
+                    Obj1 = {}
+                    Obj1['运行结果'] = '查询为空'
+                    List1.append(Obj1)
+                else:
+                    for i in range(len(res1)):
+                        res1[i] = res1[i].split('|')
+
+                    for i in range(len(res2)):
+                        res2[i] = res2[i].split('|')
+
+                    sum = len(res2)
+                    result = ""
+                    for i in range(sum):
+                        result += " \t        " + res2[i][1] + "(" + res2[i][2] + ")               "
+                        Obj1 = {}
+                    Obj1['运行结果'] = result
+                    List1.append(Obj1)
+
+                    for i in range(len(res1)):
+                        Obj1 = {}
+                        id = i + 1
+                        result = str(id) + ":      "
+                        for j in range(sum):
+                            result += res1[i][j] + "               "
+
+                        Obj1['运行结果'] = result
+                        List1.append(Obj1)
+
+            else:
+                f = open('out.txt')
+                context = f.read()
+                result = context
+                Obj1 = {}
+                Obj1['运行结果'] = result
+                List1.append(Obj1)
+
+
+            return List1
+
+
+
+
 
             # @bainying: 不识别格式会报错：TypeError: Object of type DataFrame is not JSON serializable
             # 目前直接返回的是list
             # result = pd.DataFrame(result)
-            return result
+            # return result
